@@ -20,9 +20,22 @@ namespace TechJobs.ViewModels
         [Display(Name = "Keyword:")]
         public string Value { get; set; } = "";
 
+        // All columns, for display
+        //public List<JobFieldType> Columns { get; set; }
+
+        // View title
+        //public string Title { get; set; } = "";
+
         public SearchJobsViewModel() : base()
         {
-        }
+            //// Populate the list of all columns
 
-    }   
+            //Columns = new List<JobFieldType>();
+
+            //foreach (JobFieldType enumVal in Enum.GetValues(typeof(JobFieldType)))
+            //{
+            //    Columns.Add(enumVal);
+            //}
+        }
+    }
 }

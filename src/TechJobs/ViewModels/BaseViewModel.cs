@@ -7,7 +7,8 @@ using TechJobs.Models;
 
 namespace TechJobs.ViewModels
 {
-    abstract public class BaseViewModel
+    public class BaseViewModel
+
     {
         // All columns, for display
         public List<JobFieldType> Columns { get; set; }
@@ -25,6 +26,8 @@ namespace TechJobs.ViewModels
             {
                 Columns.Add(enumVal);
             }
+
+
         }
     }
 }

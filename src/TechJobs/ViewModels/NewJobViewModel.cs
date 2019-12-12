@@ -12,24 +12,23 @@ namespace TechJobs.ViewModels
         public string Name { get; set; }
 
         [Required]
-        [Display(Name = "Employer")]
+        [Display(Name = "Employers")]
         public int EmployerID { get; set; }
 
-        // DONE #3 - Included other fields needed to create a job,
-        // with correct valudation attributes and display names.
+        // TODO #3 - Included other fields needed to create a job,
+        // with correct validation attributes and display names.
 
         [Required]
-        [Display(Name = "Location")]
+        [Display(Name = "Locations")]
         public int LocationID { get; set; }
 
         [Required]
-        [Display(Name = "Core Competency")]
+        [Display(Name = "SKills")]
         public int CoreCompetencyID { get; set; }
 
         [Required]
-        [Display(Name = "Position Type")]
+        [Display(Name = "Position Types")]
         public int PositionTypeID { get; set; }
-
 
         public List<SelectListItem> Employers { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> Locations { get; set; } = new List<SelectListItem>();
@@ -50,7 +49,7 @@ namespace TechJobs.ViewModels
                 });
             }
 
-            // DONE #4 - populate the other List<SelectListItem> 
+            // TODO #4 - populate the other List<SelectListItem> 
             // collections needed in the view
 
             foreach (Location field in jobData.Locations.ToList())
@@ -62,18 +61,18 @@ namespace TechJobs.ViewModels
                 });
             }
 
-            foreach (CoreCompetency field in jobData.CoreCompetencies.ToList())
+            foreach (PositionType field in jobData.PositionTypes.ToList())
             {
-                CoreCompetencies.Add(new SelectListItem
+                PositionTypes.Add(new SelectListItem
                 {
                     Value = field.ID.ToString(),
                     Text = field.Value
                 });
             }
 
-            foreach (PositionType field in jobData.PositionTypes.ToList())
+            foreach (CoreCompetency field in jobData.CoreCompetencies.ToList())
             {
-                PositionTypes.Add(new SelectListItem
+                CoreCompetencies.Add(new SelectListItem
                 {
                     Value = field.ID.ToString(),
                     Text = field.Value
